@@ -1,0 +1,16 @@
+{
+  "pluginName": "ssh",
+  "description": "搜索hosts并在终端执行ssh",
+  "author": "yhan219",
+  "homepage": "https://blog.yhan219.com",
+  "logo": "logo.png",
+  "version": "0.0.1",
+  "preload": "preload.js",
+  "features": [
+    {
+      "code": "ssh_hosts",
+      "explain": "搜索hosts并在终端执行ssh",
+      "cmds":["ssh", "hosts"]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "pluginName": "show hosts",
+  "description": "搜索hosts并复制到粘贴板",
+  "author": "yhan219",
+  "homepage": "https://blog.yhan219.com",
+  "logo": "logo.png",
+  "version": "0.0.1",
+  "preload": "preload.js",
+  "features": [
+    {
+      "code": "list_hosts",
+      "explain": "搜索hosts",
+      "cmds":["hosts", "list hosts"]
+    }
+  ]
+}

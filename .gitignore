@@ -1,0 +1,77 @@
+# Created by .ignore support plugin (hsz.mobi)
+### macOS template
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Windows template
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+将删除 .DS_Store
+将删除 .gitignore
+将删除 .idea/$PROJECT_FILE$
+将删除 .idea/.gitignore
+将删除 .idea/inspectionProfiles/
+将删除 .idea/markdown-navigator-enh.xml
+将删除 .idea/markdown-navigator.xml
+将删除 .idea/misc.xml
+将删除 .idea/modules.xml
+将删除 .idea/qaplug_profiles.xml
+将删除 .idea/sonarlint/
+将删除 show-hosts/
+将删除 ssh/
+将删除 utools-plugin.iml
