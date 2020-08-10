@@ -61,17 +61,4 @@ $RECYCLE.BIN/
 *.iml
 out
 gen
-将删除 .DS_Store
-将删除 .gitignore
-将删除 .idea/$PROJECT_FILE$
-将删除 .idea/.gitignore
-将删除 .idea/inspectionProfiles/
-将删除 .idea/markdown-navigator-enh.xml
-将删除 .idea/markdown-navigator.xml
-将删除 .idea/misc.xml
-将删除 .idea/modules.xml
-将删除 .idea/qaplug_profiles.xml
-将删除 .idea/sonarlint/
-将删除 show-hosts/
-将删除 ssh/
-将删除 utools-plugin.iml
+
