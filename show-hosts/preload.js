@@ -3,16 +3,18 @@ const fs = require('fs')
 
 const noData = [{
     title: '没有数据',
+    description: '',
     icon: './logo.png'
 }]
 
 const noHostsFile = [{
     title: '没有hosts文件，请检查',
+    description: '',
     icon: './logo.png'
 }]
 
 String.prototype.resetBlank = function () {
-    var regEx = /\s+/g;
+    const regEx = /\s+/g;
     return this.replace(regEx, ' ');
 };
 

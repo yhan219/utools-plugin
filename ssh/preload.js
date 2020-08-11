@@ -17,7 +17,6 @@ String.prototype.resetBlank = function () {
 };
 
 var handleResult = function (itemData) {
-    console.log(itemData)
     if (itemData.description !== '') {
         exec(`ssh ${itemData.description}`)
     }
@@ -40,8 +39,6 @@ function handleHosts(searchWord, callbackSetList) {
     let dataLine = fileData.split(/[(\r\n)\r\n]+/);
 
     let searchNull = typeof searchWord == null || searchWord === null || searchWord === '' || searchWord === undefined;
-    console.log(searchWord)
-    console.log(searchNull)
 
     let hostsData = []
 
