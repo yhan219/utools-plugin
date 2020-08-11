@@ -1,0 +1,33 @@
+{
+  "pluginName": "有道翻译",
+  "description": "有道搜索翻译并复制到粘贴板",
+  "author": "yhan219",
+  "homepage": "https://blog.yhan219.com",
+  "logo": "logo.png",
+  "version": "0.0.1",
+  "preload": "preload.js",
+  "features": [
+    {
+      "code": "youdao-translate",
+      "explain": "有道翻译",
+      "cmds": [
+        "有道",
+        "翻译"
+      ]
+    },
+    {
+      "code": "youdao-app-id",
+      "explain": "有道翻译appId设置",
+      "cmds": [
+        "有道appid"
+      ]
+    },
+    {
+      "code": "youdao-app-secret",
+      "explain": "有道翻译app秘钥设置",
+      "cmds": [
+        "有道秘钥"
+      ]
+    }
+  ]
+}
