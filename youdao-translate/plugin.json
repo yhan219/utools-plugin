@@ -12,7 +12,13 @@
       "explain": "有道翻译",
       "cmds": [
         "有道",
-        "翻译"
+        "翻译",
+        {
+          "type": "over",
+          "label": "有道翻译",
+          "minLength": 1,
+          "maxLength": 50
+        }
       ]
     },
     {

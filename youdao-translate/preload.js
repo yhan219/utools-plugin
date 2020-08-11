@@ -178,7 +178,9 @@ window.exports = {
         args: {
             // 进入插件时调用（可选）
             enter: (action, callbackSetList) => {
-                // todo 搜索历史
+                if (action.type === 'over' && action.payload) {
+                    handleSearch(action.payload, callbackSetList);
+                }
             },
             // 子输入框内容变化时被调用 可选 (未设置则无搜索)
             search: (action, searchWord, callbackSetList) => {
