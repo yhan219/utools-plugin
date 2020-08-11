@@ -21,3 +21,5 @@
   ![应用](https://gitee.com/yhan219/blog-image/raw/master/yhan/aLHCYP.png)
 - 在utools主窗口输入 `有道appid`,回车进入，再将复制的appId输入即可
 - 在utools主窗口输入 `有道秘钥`,回车进入，再将复制的秘钥输入即可
+    - 如图：
+    ![wXyw8N](https://gitee.com/yhan219/blog-image/raw/master/yhan/wXyw8N.png)

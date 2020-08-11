@@ -80,7 +80,7 @@ function handleSearch(searchWord, callbackSetList) {
                 if (jsonData.errorCode !== '0') {
                     callbackSetList([{
                         title: errorCode.get(jsonData.errorCode),
-                        description: '',
+                        description: '查询错误',
                         icon: './logo.png'
                     }])
                     return
@@ -202,9 +202,11 @@ window.exports = {
                 //显示当前app id
                 let id = getAppId(callbackSetList);
                 if (id !== '') {
-                    callbackSetList({
-                        title: id
-                    });
+                    callbackSetList([{
+                        title: id,
+                        description: '已设置',
+                        icon: './logo.png'
+                    }]);
                 }
             },
             // 子输入框内容变化时被调用 可选 (未设置则无搜索)
@@ -217,7 +219,7 @@ window.exports = {
                 handleResult(itemData)
                 window.utools.outPlugin()
             },
-            placeholder: "输入appId并保存"
+            placeholder: "输入appId自动保存"
         }
     },
     "youdao-app-secret": {
@@ -227,9 +229,11 @@ window.exports = {
                 //显示当前app id
                 let secret = getAppSecret(callbackSetList);
                 if (secret !== '') {
-                    callbackSetList({
-                        title: secret
-                    });
+                    callbackSetList([{
+                        title: secret,
+                        description: '已设置',
+                        icon: './logo.png'
+                    }]);
                 }
             },
             // 子输入框内容变化时被调用 可选 (未设置则无搜索)
@@ -242,7 +246,7 @@ window.exports = {
                 handleResult(itemData)
                 window.utools.outPlugin()
             },
-            placeholder: "输入secret并保存"
+            placeholder: "输入secret自动保存"
         }
     }
 }
