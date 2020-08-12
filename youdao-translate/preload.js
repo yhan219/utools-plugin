@@ -20,29 +20,29 @@ const noAppSecret = [{
     icon: './logo.png'
 }]
 
-function truncate(q) {
+const truncate = q => {
     var len = q.length;
     if (len <= 20) return q;
     return q.substring(0, 10) + len + q.substring(len - 10, len);
-}
+};
 
-function getFrom(searchWord) {
+const getFrom = searchWord => {
     const reg = /^[A-Za-z]+.*$/;
     if (reg.test(searchWord)) {
         return 'en'
     }
     return 'zh-CHS';
-}
+};
 
-function getTo(from) {
+const getTo = from => {
     if (from === 'en') {
         return 'zh-CHS';
     }
     return 'en';
-}
+};
 
 
-function handleSearch(searchWord, callbackSetList) {
+const handleSearch = (searchWord, callbackSetList) => {
     const appId = getAppId(callbackSetList);
     if (appId === '') {
         return
@@ -119,13 +119,6 @@ function handleSearch(searchWord, callbackSetList) {
             });
         }
     )
-    ;
-}
-
-
-String.prototype.resetBlank = function () {
-    var regEx = /\s+/g;
-    return this.replace(regEx, ' ');
 };
 
 const handleResult = function (itemData) {
@@ -172,6 +165,38 @@ const getAppSecret = function (callbackSetList) {
     return appSecret.data
 };
 
+const addHistory = item => {
+    if (!item) {
+        return
+    }
+    let title = item.title;
+    let history = getHistory()||[];
+    console.log(history)
+    console.log(getHistory())
+    let index = -1;
+    for (let i = 0; i < history.length; i++) {
+        if (history[i].title === title) {
+            index = i;
+        }
+    }
+    if (index !== -1) {
+        history.splice(index, 1);
+    }
+    history.unshift(item);
+    if (history.length > 20) {
+        history = history.slice(0, 20);
+    }
+    saveOrUpdateDb('history', history);
+};
+
+const getHistory = function () {
+    let history = window.utools.db.get("history");
+    if (history) {
+        return history.data
+    }
+    return history;
+}
+
 window.exports = {
     "youdao-translate": {
         mode: "list",
@@ -179,7 +204,16 @@ window.exports = {
             // 进入插件时调用（可选）
             enter: (action, callbackSetList) => {
                 if (action.type === 'over' && action.payload) {
-                    handleSearch(action.payload, callbackSetList);
+                    // 直接调用setSubInputValue不生效，特殊处理
+                    setTimeout(function () {
+                        window.utools.setSubInputValue(action.payload);
+                    }, 50);
+                } else {
+                    let history = getHistory();
+                    console.log(history)
+                    if (history) {
+                        callbackSetList(history)
+                    }
                 }
             },
             // 子输入框内容变化时被调用 可选 (未设置则无搜索)
@@ -192,9 +226,10 @@ window.exports = {
             select: (action, itemData, callbackSetList) => {
                 window.utools.hideMainWindow()
                 handleResult(itemData)
+                addHistory(itemData)
                 window.utools.outPlugin()
             },
-            placeholder: "搜索回车复制"
+            placeholder: "搜索 回车复制"
         }
     },
     "youdao-app-id": {
