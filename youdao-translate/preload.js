@@ -171,8 +171,6 @@ const addHistory = item => {
     }
     let title = item.title;
     let history = getHistory()||[];
-    console.log(history)
-    console.log(getHistory())
     let index = -1;
     for (let i = 0; i < history.length; i++) {
         if (history[i].title === title) {
