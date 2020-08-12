@@ -16,7 +16,7 @@ const noAppId = [{
 
 
 const noAppSecret = [{
-    title: '未设置app secret，请阅读详情并按步骤设置≤',
+    title: '未设置app secret，请阅读详情并按步骤设置',
     icon: './logo.png'
 }]
 
