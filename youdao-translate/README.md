@@ -5,12 +5,12 @@
 插件开源地址 [utools-plugin](https://github.com/yhan219/utools-plugin)
 
 ### 功能介绍
-- 进入显示搜索历史(todo)
-
+- 进入显示搜索历史，选中复制到粘贴板,默认保存20条记录
+![e7EBIu](https://gitee.com/yhan219/blog-image/raw/master/yhan/e7EBIu.png)
 - 输入关键字搜索（自动识别中英文）
 ![pj8RPP](https://gitee.com/yhan219/blog-image/raw/master/yhan/pj8RPP.jpg)
 
-- 选中回车即可复制翻译结果
+- 选中回车即可复制翻译结果，并保存到搜索历史中
 
 ### 设置
 由于有道翻译需要收费，所以需要用户手动设置appId和秘钥，每个新注册的用户都有50元体验金，对于个人来说已经够用了，即使用完了也可以重新注册个账号。

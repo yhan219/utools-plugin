@@ -229,7 +229,7 @@ window.exports = {
                 addHistory(itemData)
                 window.utools.outPlugin()
             },
-            placeholder: "搜索 回车复制"
+            placeholder: "搜索"
         }
     },
     "youdao-app-id": {
