@@ -208,7 +208,6 @@ window.exports = {
                     }, 50);
                 } else {
                     let history = getHistory();
-                    console.log(history)
                     if (history) {
                         callbackSetList(history)
                     }
