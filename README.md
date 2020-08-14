@@ -1,7 +1,7 @@
 ## `utools`插件开发
 
 - [显示hosts](https://github.com/yhan219/utools-plugin/tree/master/show-hosts)
-- [ssh](https://github.com/yhan219/utools-plugin/tree/master/ssh) todo
+- [iterm-ssh](https://github.com/yhan219/utools-plugin/tree/master/iterm-ssh)
 - [有道翻译](https://github.com/yhan219/utools-plugin/tree/master/youdao-translate)
 - [iterm执行命令](https://github.com/yhan219/utools-plugin/tree/master/iterm-command)
 

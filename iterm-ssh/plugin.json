@@ -1,16 +1,19 @@
 {
-  "pluginName": "ssh",
-  "description": "搜索hosts并在终端执行ssh",
+  "pluginName": "iTerm执行ssh",
+  "description": "搜索hosts并在iTerm执行ssh",
   "author": "yhan219",
   "homepage": "https://blog.yhan219.com",
   "logo": "logo.png",
   "version": "0.0.1",
   "preload": "preload.js",
+  "platform": [
+    "darwin"
+  ],
   "features": [
     {
       "code": "ssh_hosts",
-      "explain": "搜索hosts并在终端执行ssh",
-      "cmds":["ssh", "hosts"]
+      "explain": "搜索hosts并在iTerm执行ssh",
+      "cmds":["ssh"]
     }
   ]
 }
