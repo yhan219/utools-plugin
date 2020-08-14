@@ -1,0 +1,28 @@
+{
+  "pluginName": "iterm执行命令",
+  "description": "打开iterm并执行命令",
+  "author": "yhan219",
+  "homepage": "https://blog.yhan219.com",
+  "logo": "logo.png",
+  "version": "0.0.1",
+  "preload": "preload.js",
+  "platform": [
+    "darwin"
+  ],
+  "features": [
+    {
+      "code": "iterm_command",
+      "explain": "打开iterm并执行命令",
+      "cmds": [
+        "iterm",
+        ">",
+        {
+          "type": "over",
+          "label": "打开iTerm并执行",
+          "minLength": 2,
+          "maxLength": 50
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-const exec = require('child_process').exec
+const spawn = require('child_process').spawn
 const fs = require('fs')
 
 const noData = [{
@@ -74,11 +74,34 @@ window.exports = {
         args: {
             // 进入插件时调用（可选）
             enter: (action, callbackSetList) => {
-                handleHosts(null, callbackSetList)
+                // handleHosts(null, callbackSetList)
+                require('child_process').exec(`osascript -e 'tell application "iTerm"
+        activate
+        try
+            select first window
+            set onlywindow to true
+        on error
+            create window with default profile
+            select first window
+            set onlywindow to true
+        end try
+        tell the first window
+            if onlywindow is false then
+                create tab with default profile
+            end if
+            tell current session to write text "ls"
+        end tell
+    end tell'`, (error, stdout, stderr) => {
+                    if (error) return window.utools.showNotification(stderr)
+                    console.log(error)
+                    window.utools.outPlugin()
+                })
             },
             // 子输入框内容变化时被调用 可选 (未设置则无搜索)
             search: (action, searchWord, callbackSetList) => {
-                handleHosts(searchWord, callbackSetList)
+
+
+                // handleHosts(searchWord, callbackSetList)
             },
             // 用户选择列表中某个条目时被调用
             select: (action, itemData, callbackSetList) => {
