@@ -89,16 +89,19 @@ const execCommand = function (itemData) {
     require('child_process').exec(`osascript -e 'tell application "iTerm"
         activate
         try
+            select current window
             tell current window
                 create tab with default profile
             end tell
+            tell current window
+                tell current session to write text "${itemData.title}"
+            end tell
         on error
-            create window with default profile
-            select first window
+            select current window
+            tell current window
+                tell current session to write text "${itemData.title}"
+            end tell
         end try
-        tell the first window
-            tell current session to write text "${itemData.title}"
-        end tell
     end tell'`, (error, stdout, stderr) => {
         if (error) return window.utools.showNotification(stderr)
         window.utools.outPlugin()
