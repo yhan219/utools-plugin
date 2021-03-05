@@ -4,7 +4,7 @@
   "author": "yhan219",
   "homepage": "https://blog.yhan219.com",
   "logo": "logo.png",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "preload": "preload.js",
   "platform": [
     "darwin"
