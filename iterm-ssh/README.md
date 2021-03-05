@@ -14,3 +14,6 @@
 ![DURqT1](https://gitee.com/yhan219/blog-image/raw/master/yhan/DURqT1.png)
 - 选中回车即可打开iTerm登录`ssh`，并保存到搜索历史中
 ![pSyA5v](https://gitee.com/yhan219/blog-image/raw/master/yhan/pSyA5v.png)
+  
+### 更新历史
+- 0.0.2 新标签打开

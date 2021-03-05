@@ -95,17 +95,14 @@ const execCommand = function (itemData) {
     require('child_process').exec(`osascript -e 'tell application "iTerm"
         activate
         try
-            select first window
-            set onlywindow to true
+            tell current window
+                create tab with default profile
+            end tell
         on error
             create window with default profile
             select first window
-            set onlywindow to true
         end try
         tell the first window
-            if onlywindow is false then
-                create tab with default profile
-            end if
             tell current session to write text "ssh ${itemData.title}"
         end tell
     end tell'`, (error, stdout, stderr) => {
