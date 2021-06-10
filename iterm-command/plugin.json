@@ -4,7 +4,7 @@
   "author": "yhan219",
   "homepage": "https://blog.yhan219.com",
   "logo": "logo.png",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "preload": "preload.js",
   "platform": [
     "darwin"
@@ -19,6 +19,20 @@
         {
           "type": "over",
           "label": "打开iTerm并执行",
+          "minLength": 2,
+          "maxLength": 50
+        }
+      ]
+    },
+    {
+      "code": "current_iterm_command",
+      "explain": "当前目录打开iTerm并执行",
+      "cmds": [
+        "iterm",
+        ".>",
+        {
+          "type": "over",
+          "label": "当前目录打开iTerm并执行",
           "minLength": 2,
           "maxLength": 50
         }

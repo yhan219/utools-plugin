@@ -4,6 +4,9 @@
 
 插件开源地址 [utools-plugin](https://github.com/yhan219/utools-plugin)
 
+- `>`是直接执行命令
+- `.>`当前目录执行命令
+
 ### 功能介绍
 - 进入显示执行命令历史，选中复制到粘贴板,默认保存50条记录
 ![Li9StX](https://gitee.com/yhan219/blog-image/raw/master/yhan/Li9StX.png)
@@ -14,4 +17,5 @@
   
 
 ### 更新历史
+- 0.0.3 添加当前目录执行
 - 0.0.2 新标签打开并执行命令

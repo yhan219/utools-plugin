@@ -82,10 +82,11 @@ const handleSearch = function (searchWord, callbackSetList) {
     }
 };
 
-const execCommand = function (itemData) {
+const execCommand = function (itemData,path) {
     if (!itemData || !itemData.title) {
         return
     }
+    let goPath = path ? 'tell current session to write text "cd ' + path + '"' : '';
     require('child_process').exec(`osascript -e 'tell application "iTerm"
         activate
         try
@@ -94,11 +95,13 @@ const execCommand = function (itemData) {
                 create tab with default profile
             end tell
             tell current window
+                ${goPath}
                 tell current session to write text "${itemData.title}"
             end tell
         on error
             select current window
             tell current window
+                ${goPath}
                 tell current session to write text "${itemData.title}"
             end tell
         end try
@@ -139,6 +142,37 @@ window.exports = {
                 window.utools.outPlugin()
             },
             placeholder: "回车执行"
+        }
+    },
+    "current_iterm_command": {
+        mode: "list",
+        args: {
+            // 进入插件时调用（可选）
+            enter: (action, callbackSetList) => {
+                if (action.type === 'over' && action.payload) {
+                    // 直接调用setSubInputValue不生效，特殊处理
+                    setTimeout(function () {
+                        window.utools.setSubInputValue(action.payload);
+                    }, 50);
+                } else {
+                    let history = getHistory();
+                    if (history) {
+                        callbackSetList(history)
+                    }
+                }
+
+            },
+            // 子输入框内容变化时被调用 可选 (未设置则无搜索)
+            search: (action, searchWord, callbackSetList) => {
+                handleSearch(searchWord, callbackSetList)
+            },
+            // 用户选择列表中某个条目时被调用
+            select: (action, itemData, callbackSetList) => {
+                window.utools.hideMainWindow()
+                execCommand(itemData,window.utools.getCurrentFolderPath() || '~')
+                window.utools.outPlugin()
+            },
+            placeholder: "回车当前目录执行"
         }
     }
 }
