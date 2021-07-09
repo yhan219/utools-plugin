@@ -14,7 +14,6 @@
 ![u8otFC](https://gitee.com/yhan219/blog-image/raw/master/yhan/u8otFC.png)
 - 选中回车即可打开iTerm执行命令，并保存到搜索历史中
 ![dv1ogZ](https://gitee.com/yhan219/blog-image/raw/master/yhan/dv1ogZ.png)
-  
 
 ### 更新历史
 - 0.0.3 添加当前目录执行
