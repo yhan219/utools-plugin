@@ -86,7 +86,7 @@ const execCommand = function (itemData,path) {
     if (!itemData || !itemData.title) {
         return
     }
-    let goPath = path ? 'tell current session to write text "cd ' + path + '"' : '';
+    let goPath = path ? 'tell current session to write text "cd "& quoted form of "' + path + '"' : '';
     require('child_process').exec(`osascript -e 'tell application "iTerm"
         activate
         try
